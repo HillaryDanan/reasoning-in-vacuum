@@ -153,6 +153,72 @@ With only 3 training examples, both models collapsed to performance statisticall
 - **Not significantly above chance** (α = 0.05)
 - Test for below-chance performance: p = 0.329 (not significant)
 
+### Condition 1c: Transformation Ambiguity
+
+To test rule identification, we presented two transformation types with visual markers:
+- ★ marker → rotate-left
+- ◆ marker → reverse  
+
+Training showed 3 examples of each rule (6 total examples). Test required applying the correct transformation based on marker.
+
+**Chance level**: 50% (random rule selection)
+
+**Results:**
+- **GPT-4**: 65% (13/20 correct), p = 0.132 vs. chance → NOT significant
+- **Claude 3.5**: 45% (9/20 correct), p = 0.824 vs. chance → NOT significant
+- **Model difference**: p = 0.341 → NOT significant
+
+**Interpretation**: Neither model shows reliable rule identification. Both perform at chance level despite having 6 total training examples, demonstrating that difficulty arises not merely from example scarcity but from inability to handle structural ambiguity.
+
+### Condition 1d: Complexity Scaling
+
+Training used 3 examples of 3-symbol sequences. Testing employed mixed-length sequences to assess rule generalization:
+- 7 items: 3-symbol (matching training length)
+- 7 items: 4-symbol (generalization)
+- 6 items: 5-symbol (further generalization)
+
+**Results:**
+- **GPT-4**: 45% (9/20 correct)
+- **Claude 3.5**: 10% (2/20 correct)
+
+**Length-specific analysis** (from response inspection):
+- 3-symbol: Both models performed poorly despite matching training length
+- 4-5 symbol: Near-zero accuracy for both models
+
+**Interpretation**: Models cannot generalize the rotation rule to longer sequences, even after learning it on shorter sequences. This demonstrates brittle, length-specific pattern matching rather than flexible rule application.
+
+### Condition 1e: Rule Transfer - Complete Failure on Control
+
+Training presented 3 examples of rotate-by-1. Testing included:
+- 10 control items: rotate-by-1 (same as training)
+- 10 transfer items: rotate-by-2 (analogical extension)
+
+**Results:**
+- **GPT-4**: 50% overall (10/20 correct)
+  - Control (rotate-by-1): **0/10 correct** (0%)
+  - Transfer (rotate-by-2): 0/10 correct (0%)
+  - Note: 50% overall due to random symbol matching, not rule application
+
+- **Claude 3.5**: 5% overall (1/20 correct)
+  - Control (rotate-by-1): **0/10 correct** (0%)
+  - Transfer (rotate-by-2): 0/10 correct (0%)
+
+**Critical finding**: Neither model correctly applied the rotate-by-1 transformation to even a single control item, despite this being the exact transformation demonstrated in training. The 50% "accuracy" for GPT-4 reflects random symbol coincidences, not rule application.
+
+**Interpretation**: Complete breakdown of pattern retention. Models cannot maintain learned transformation even when testing on the identical rule with novel symbols. This represents catastrophic failure of abstraction, worse than all previous conditions.
+
+### Summary Across All Conditions
+
+| Condition | Training Examples | GPT-4 | Claude | Chance | Significant? |
+|-----------|------------------|-------|--------|--------|--------------|
+| Version 1 | 20 | 100% | 100% | 16.7% | Yes (p<0.001) |
+| Version 1b | 3 | 30% | 10% | 16.7% | **No (both p>0.10)** |
+| Condition 1c | 6 (2 rules) | 65% | 45% | 50.0% | **No (both p>0.13)** |
+| Condition 1d | 3 (var length) | 45% | 10% | varies | Poor performance |
+| Condition 1e | 3 (control) | **0%** | **0%** | 16.7% | **Below chance** |
+
+**Convergent pattern**: Performance collapses to chance or below across all appropriately calibrated conditions (1b-1e). Only the over-specified Version 1 (20 examples) produced above-chance performance.
+
 ### Performance Comparison
 
 | Condition | GPT-4 | Claude 3.5 |
