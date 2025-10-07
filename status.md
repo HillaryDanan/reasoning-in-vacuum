@@ -366,8 +366,8 @@ Current task is **too easy** - both pattern matching and reasoning succeed. We n
 | **V1b** | 3 | 30% | 10% | 16.7% | **NO** (both p>0.10) | Chance level |
 | **1c** | 6 (2 rules) | 65% | 45% | 50.0% | **NO** (both p>0.13) | Chance level |
 | **1d** | 3 (var len) | 45% | 10% | varies | N/A | Failed generalization |
-| **1e Control** | 3 | **0%** | **0%** | 16.7% | **BELOW** | Catastrophic failure |
-| **1e Transfer** | 3 | 0% | 0% | 16.7% | **BELOW** | No transfer |
+| **Condition 1e** Control | 3 | **10%** (1/10) | **0%** (0/10) | 16.7% | At/below chance |
+| **Condition 1e** Transfer | 3 | **90%** (9/10) | **10%** (1/10) | 16.7% | Misapplication (GPT-4) |
 
 ### THE COMPLETE PATTERN:
 
