@@ -1,0 +1,314 @@
+{
+  "training": [
+    {
+      "input_sequence": [
+        "⬁",
+        "⨟",
+        "⨪"
+      ],
+      "output_sequence": [
+        "⨪",
+        "⬁",
+        "⨟"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨆",
+        "⨗",
+        "⨌"
+      ],
+      "output_sequence": [
+        "⨌",
+        "⨆",
+        "⨗"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬃",
+        "⨀",
+        "⬔"
+      ],
+      "output_sequence": [
+        "⬔",
+        "⬃",
+        "⨀"
+      ],
+      "transformation": "rotate_left"
+    }
+  ],
+  "test": [
+    {
+      "input_sequence": [
+        "▭",
+        "⨤",
+        "⬲"
+      ],
+      "output_sequence": [
+        "⬲",
+        "▭",
+        "⨤"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬟",
+        "◊",
+        "⨥"
+      ],
+      "output_sequence": [
+        "⨥",
+        "⬟",
+        "◊"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬯",
+        "⨇",
+        "⨝"
+      ],
+      "output_sequence": [
+        "⨝",
+        "⬯",
+        "⨇"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬷",
+        "⨷",
+        "⨋"
+      ],
+      "output_sequence": [
+        "⨋",
+        "⬷",
+        "⨷"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "▵",
+        "⨬",
+        "⨑"
+      ],
+      "output_sequence": [
+        "⨑",
+        "▵",
+        "⨬"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨢",
+        "⨶",
+        "⬫"
+      ],
+      "output_sequence": [
+        "⬫",
+        "⨢",
+        "⨶"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "◐",
+        "⨈",
+        "⨙"
+      ],
+      "output_sequence": [
+        "⨙",
+        "◐",
+        "⨈"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨴",
+        "⨊",
+        "►"
+      ],
+      "output_sequence": [
+        "►",
+        "⨴",
+        "⨊"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨍",
+        "⬗",
+        "⬥"
+      ],
+      "output_sequence": [
+        "⬥",
+        "⨍",
+        "⬗"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "■",
+        "⬮",
+        "⨰"
+      ],
+      "output_sequence": [
+        "⨰",
+        "■",
+        "⬮"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬉",
+        "○",
+        "⨏"
+      ],
+      "output_sequence": [
+        "⨏",
+        "⬉",
+        "○"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨲",
+        "⨓",
+        "⬾"
+      ],
+      "output_sequence": [
+        "⬾",
+        "⨲",
+        "⨓"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "▫",
+        "▧",
+        "⨞"
+      ],
+      "output_sequence": [
+        "⨞",
+        "▫",
+        "▧"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬪",
+        "⬑",
+        "⨩"
+      ],
+      "output_sequence": [
+        "⨩",
+        "⬪",
+        "⬑"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "◕",
+        "⨂",
+        "◂"
+      ],
+      "output_sequence": [
+        "◂",
+        "◕",
+        "⨂"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "▩",
+        "⬖",
+        "⬿"
+      ],
+      "output_sequence": [
+        "⬿",
+        "▩",
+        "⬖"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬋",
+        "⨣",
+        "⬻"
+      ],
+      "output_sequence": [
+        "⬻",
+        "⬋",
+        "⨣"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "◔",
+        "⬊",
+        "▸"
+      ],
+      "output_sequence": [
+        "▸",
+        "◔",
+        "⬊"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "▹",
+        "⬧",
+        "◌"
+      ],
+      "output_sequence": [
+        "◌",
+        "▹",
+        "⬧"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬓",
+        "◍",
+        "□"
+      ],
+      "output_sequence": [
+        "□",
+        "⬓",
+        "◍"
+      ],
+      "transformation": "rotate_left"
+    }
+  ],
+  "metadata": {
+    "experiment": "1b_minimal_training",
+    "n_training": 3,
+    "n_test": 20,
+    "sequence_length": 3,
+    "transformation": "rotate_left",
+    "seed": 42,
+    "generated_at": "2025-10-07T09:44:21.684140"
+  }
+}
