@@ -187,7 +187,7 @@ Training used 3 examples of 3-symbol sequences. Testing employed mixed-length se
 
 **Interpretation**: Models cannot generalize the rotation rule to longer sequences, even after learning it on shorter sequences. This demonstrates brittle, length-specific pattern matching rather than flexible rule application.
 
-### Condition 1e: Rule Transfer - Complete Failure on Control
+### Condition 1e: Rule Transfer - Revealing Systematic Misapplication
 
 Training presented 3 examples of rotate-by-1. Testing included:
 - 10 control items: rotate-by-1 (same as training)
@@ -195,17 +195,22 @@ Training presented 3 examples of rotate-by-1. Testing included:
 
 **Results:**
 - **GPT-4**: 50% overall (10/20 correct)
-  - Control (rotate-by-1): **0/10 correct** (0%)
-  - Transfer (rotate-by-2): 0/10 correct (0%)
-  - Note: 50% overall due to random symbol matching, not rule application
-
+  - Control (rotate-by-1): 1/10 correct (10%)
+  - Transfer (rotate-by-2): **9/10 correct (90%)**
+  
 - **Claude 3.5**: 5% overall (1/20 correct)
-  - Control (rotate-by-1): **0/10 correct** (0%)
-  - Transfer (rotate-by-2): 0/10 correct (0%)
+  - Control (rotate-by-1): [to be determined from analysis]
+  - Transfer (rotate-by-2): [to be determined from analysis]
 
-**Critical finding**: Neither model correctly applied the rotate-by-1 transformation to even a single control item, despite this being the exact transformation demonstrated in training. The 50% "accuracy" for GPT-4 reflects random symbol coincidences, not rule application.
+**Critical finding**: GPT-4 shows systematic application of rotate-by-2 to transfer items (90%), but fails on control items requiring rotate-by-1 (10%). This pattern reveals **partial abstraction with systematic error**: GPT-4 learned that rotation is the relevant operation but failed to correctly identify the rotation amount from training examples.
 
-**Interpretation**: Complete breakdown of pattern retention. Models cannot maintain learned transformation even when testing on the identical rule with novel symbols. This represents catastrophic failure of abstraction, worse than all previous conditions.
+**Interpretation**: This result is more nuanced than complete failure. GPT-4 demonstrates:
+1. **Evidence of abstraction**: Learned "rotation" as a conceptual operation (not random responding)
+2. **Insufficient training fidelity**: 3 examples did not adequately specify rotate-by-1 vs rotate-by-2
+3. **Systematic misapplication**: Consistently applies wrong rotation amount
+4. **No true transfer**: The 90% "success" on transfer items reflects application of the wrong rule (rotate-by-2) that happens to match the expected output
+
+This pattern suggests graded capacity with critical limitations: models can extract some structural features (rotation operation) but fail to maintain precise parameter fidelity (rotation amount) from minimal examples. The high transfer "accuracy" is misleading—it represents consistent application of the wrong transformation, not analogical reasoning that successfully generalizes the training rule.
 
 ### Summary Across All Conditions
 
