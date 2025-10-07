@@ -1,0 +1,1057 @@
+{
+  "training": [
+    {
+      "input_sequence": [
+        "⬁",
+        "⨟",
+        "⨪"
+      ],
+      "output_sequence": [
+        "⨪",
+        "⬁",
+        "⨟"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨆",
+        "⨗",
+        "⨌"
+      ],
+      "output_sequence": [
+        "⨌",
+        "⨆",
+        "⨗"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬃",
+        "⨀",
+        "⬔"
+      ],
+      "output_sequence": [
+        "⬔",
+        "⬃",
+        "⨀"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬠",
+        "⬇",
+        "⬙"
+      ],
+      "output_sequence": [
+        "⬙",
+        "⬠",
+        "⬇"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬌",
+        "⬵",
+        "⨦"
+      ],
+      "output_sequence": [
+        "⨦",
+        "⬌",
+        "⬵"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬺",
+        "⨕",
+        "⨻"
+      ],
+      "output_sequence": [
+        "⨻",
+        "⬺",
+        "⨕"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬼",
+        "⨭",
+        "⬜"
+      ],
+      "output_sequence": [
+        "⬜",
+        "⬼",
+        "⨭"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨮",
+        "▤",
+        "⬨"
+      ],
+      "output_sequence": [
+        "⬨",
+        "⨮",
+        "▤"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬩",
+        "●",
+        "⨄"
+      ],
+      "output_sequence": [
+        "⨄",
+        "⬩",
+        "●"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "▾",
+        "▻",
+        "⬘"
+      ],
+      "output_sequence": [
+        "⬘",
+        "▾",
+        "▻"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬤",
+        "⨖",
+        "⬏"
+      ],
+      "output_sequence": [
+        "⬏",
+        "⬤",
+        "⨖"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨎",
+        "◅",
+        "⨠"
+      ],
+      "output_sequence": [
+        "⨠",
+        "⨎",
+        "◅"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨨",
+        "◃",
+        "⬱"
+      ],
+      "output_sequence": [
+        "⬱",
+        "⨨",
+        "◃"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨳",
+        "⨧",
+        "⨱"
+      ],
+      "output_sequence": [
+        "⨱",
+        "⨳",
+        "⨧"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨃",
+        "⬣",
+        "⬭"
+      ],
+      "output_sequence": [
+        "⬭",
+        "⨃",
+        "⬣"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬬",
+        "⬂",
+        "⨹"
+      ],
+      "output_sequence": [
+        "⨹",
+        "⬬",
+        "⬂"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨅",
+        "⨜",
+        "⬍"
+      ],
+      "output_sequence": [
+        "⬍",
+        "⨅",
+        "⨜"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "▣",
+        "◒",
+        "⬛"
+      ],
+      "output_sequence": [
+        "⬛",
+        "▣",
+        "◒"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬕",
+        "▿",
+        "▷"
+      ],
+      "output_sequence": [
+        "▷",
+        "⬕",
+        "▿"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬎",
+        "▴",
+        "◀"
+      ],
+      "output_sequence": [
+        "◀",
+        "⬎",
+        "▴"
+      ],
+      "transformation": "rotate_left"
+    }
+  ],
+  "test": [
+    {
+      "input_sequence": [
+        "▭",
+        "⨤",
+        "⬲"
+      ],
+      "output_sequence": [
+        "⬲",
+        "▭",
+        "⨤"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬟",
+        "◊",
+        "⨥"
+      ],
+      "output_sequence": [
+        "⨥",
+        "⬟",
+        "◊"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬯",
+        "⨇",
+        "⨝"
+      ],
+      "output_sequence": [
+        "⨝",
+        "⬯",
+        "⨇"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬷",
+        "⨷",
+        "⨋"
+      ],
+      "output_sequence": [
+        "⨋",
+        "⬷",
+        "⨷"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "▵",
+        "⨬",
+        "⨑"
+      ],
+      "output_sequence": [
+        "⨑",
+        "▵",
+        "⨬"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨢",
+        "⨶",
+        "⬫"
+      ],
+      "output_sequence": [
+        "⬫",
+        "⨢",
+        "⨶"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "◐",
+        "⨈",
+        "⨙"
+      ],
+      "output_sequence": [
+        "⨙",
+        "◐",
+        "⨈"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨴",
+        "⨊",
+        "►"
+      ],
+      "output_sequence": [
+        "►",
+        "⨴",
+        "⨊"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨍",
+        "⬗",
+        "⬥"
+      ],
+      "output_sequence": [
+        "⬥",
+        "⨍",
+        "⬗"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "■",
+        "⬮",
+        "⨰"
+      ],
+      "output_sequence": [
+        "⨰",
+        "■",
+        "⬮"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬉",
+        "○",
+        "⨏"
+      ],
+      "output_sequence": [
+        "⨏",
+        "⬉",
+        "○"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⨲",
+        "⨓",
+        "⬾"
+      ],
+      "output_sequence": [
+        "⬾",
+        "⨲",
+        "⨓"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "▫",
+        "▧",
+        "⨞"
+      ],
+      "output_sequence": [
+        "⨞",
+        "▫",
+        "▧"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬪",
+        "⬑",
+        "⨩"
+      ],
+      "output_sequence": [
+        "⨩",
+        "⬪",
+        "⬑"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "◕",
+        "⨂",
+        "◂"
+      ],
+      "output_sequence": [
+        "◂",
+        "◕",
+        "⨂"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "▩",
+        "⬖",
+        "⬿"
+      ],
+      "output_sequence": [
+        "⬿",
+        "▩",
+        "⬖"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬋",
+        "⨣",
+        "⬻"
+      ],
+      "output_sequence": [
+        "⬻",
+        "⬋",
+        "⨣"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "◔",
+        "⬊",
+        "▸"
+      ],
+      "output_sequence": [
+        "▸",
+        "◔",
+        "⬊"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "▹",
+        "⬧",
+        "◌"
+      ],
+      "output_sequence": [
+        "◌",
+        "▹",
+        "⬧"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "⬓",
+        "◍",
+        "□"
+      ],
+      "output_sequence": [
+        "□",
+        "⬓",
+        "◍"
+      ],
+      "transformation": "rotate_left"
+    }
+  ],
+  "control_training": [
+    {
+      "input_sequence": [
+        "A",
+        "B",
+        "C"
+      ],
+      "output_sequence": [
+        "C",
+        "A",
+        "B"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "D",
+        "E",
+        "F"
+      ],
+      "output_sequence": [
+        "F",
+        "D",
+        "E"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "G",
+        "H",
+        "I"
+      ],
+      "output_sequence": [
+        "I",
+        "G",
+        "H"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "J",
+        "K",
+        "L"
+      ],
+      "output_sequence": [
+        "L",
+        "J",
+        "K"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "M",
+        "N",
+        "O"
+      ],
+      "output_sequence": [
+        "O",
+        "M",
+        "N"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "P",
+        "Q",
+        "R"
+      ],
+      "output_sequence": [
+        "R",
+        "P",
+        "Q"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "S",
+        "T",
+        "U"
+      ],
+      "output_sequence": [
+        "U",
+        "S",
+        "T"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "V",
+        "W",
+        "X"
+      ],
+      "output_sequence": [
+        "X",
+        "V",
+        "W"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "Y",
+        "Z",
+        "A"
+      ],
+      "output_sequence": [
+        "A",
+        "Y",
+        "Z"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "B",
+        "C",
+        "D"
+      ],
+      "output_sequence": [
+        "D",
+        "B",
+        "C"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "E",
+        "F",
+        "G"
+      ],
+      "output_sequence": [
+        "G",
+        "E",
+        "F"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "H",
+        "I",
+        "J"
+      ],
+      "output_sequence": [
+        "J",
+        "H",
+        "I"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "K",
+        "L",
+        "M"
+      ],
+      "output_sequence": [
+        "M",
+        "K",
+        "L"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "N",
+        "O",
+        "P"
+      ],
+      "output_sequence": [
+        "P",
+        "N",
+        "O"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "Q",
+        "R",
+        "S"
+      ],
+      "output_sequence": [
+        "S",
+        "Q",
+        "R"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "T",
+        "U",
+        "V"
+      ],
+      "output_sequence": [
+        "V",
+        "T",
+        "U"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "W",
+        "X",
+        "Y"
+      ],
+      "output_sequence": [
+        "Y",
+        "W",
+        "X"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "Z",
+        "A",
+        "B"
+      ],
+      "output_sequence": [
+        "B",
+        "Z",
+        "A"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "C",
+        "D",
+        "E"
+      ],
+      "output_sequence": [
+        "E",
+        "C",
+        "D"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "F",
+        "G",
+        "H"
+      ],
+      "output_sequence": [
+        "H",
+        "F",
+        "G"
+      ],
+      "transformation": "rotate_left"
+    }
+  ],
+  "control_test": [
+    {
+      "input_sequence": [
+        "I",
+        "J",
+        "K"
+      ],
+      "output_sequence": [
+        "K",
+        "I",
+        "J"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "L",
+        "M",
+        "N"
+      ],
+      "output_sequence": [
+        "N",
+        "L",
+        "M"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "O",
+        "P",
+        "Q"
+      ],
+      "output_sequence": [
+        "Q",
+        "O",
+        "P"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "R",
+        "S",
+        "T"
+      ],
+      "output_sequence": [
+        "T",
+        "R",
+        "S"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "U",
+        "V",
+        "W"
+      ],
+      "output_sequence": [
+        "W",
+        "U",
+        "V"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "output_sequence": [
+        "Z",
+        "X",
+        "Y"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "A",
+        "B",
+        "C"
+      ],
+      "output_sequence": [
+        "C",
+        "A",
+        "B"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "D",
+        "E",
+        "F"
+      ],
+      "output_sequence": [
+        "F",
+        "D",
+        "E"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "G",
+        "H",
+        "I"
+      ],
+      "output_sequence": [
+        "I",
+        "G",
+        "H"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "J",
+        "K",
+        "L"
+      ],
+      "output_sequence": [
+        "L",
+        "J",
+        "K"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "M",
+        "N",
+        "O"
+      ],
+      "output_sequence": [
+        "O",
+        "M",
+        "N"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "P",
+        "Q",
+        "R"
+      ],
+      "output_sequence": [
+        "R",
+        "P",
+        "Q"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "S",
+        "T",
+        "U"
+      ],
+      "output_sequence": [
+        "U",
+        "S",
+        "T"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "V",
+        "W",
+        "X"
+      ],
+      "output_sequence": [
+        "X",
+        "V",
+        "W"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "Y",
+        "Z",
+        "A"
+      ],
+      "output_sequence": [
+        "A",
+        "Y",
+        "Z"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "B",
+        "C",
+        "D"
+      ],
+      "output_sequence": [
+        "D",
+        "B",
+        "C"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "E",
+        "F",
+        "G"
+      ],
+      "output_sequence": [
+        "G",
+        "E",
+        "F"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "H",
+        "I",
+        "J"
+      ],
+      "output_sequence": [
+        "J",
+        "H",
+        "I"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "K",
+        "L",
+        "M"
+      ],
+      "output_sequence": [
+        "M",
+        "K",
+        "L"
+      ],
+      "transformation": "rotate_left"
+    },
+    {
+      "input_sequence": [
+        "N",
+        "O",
+        "P"
+      ],
+      "output_sequence": [
+        "P",
+        "N",
+        "O"
+      ],
+      "transformation": "rotate_left"
+    }
+  ],
+  "metadata": {
+    "seed": 42,
+    "n_training": 20,
+    "n_test": 20,
+    "sequence_length": 3,
+    "generated_at": "2025-10-07T09:37:33.329946"
+  }
+}
