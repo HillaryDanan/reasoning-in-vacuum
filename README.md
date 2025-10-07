@@ -1,238 +1,195 @@
 # Reasoning in Vacuum
 
-**Testing whether Large Language Models perform abstract reasoning or sophisticated pattern matching through language-free symbol manipulation.**
+Testing whether large language models can induce abstract transformation rules from minimal examples using novel symbols.
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-## 🧠 Core Idea
+---
 
-Can LLMs induce abstract transformation rules from examples using symbols they've never seen before? Or do they just pattern-match over training data?
+## Overview
 
-We test this by presenting input-output mappings using **arbitrary Unicode symbols** with structure defined only through examples. No language. No instructions. No familiar patterns. Just pure structure.
+This project tests LLM performance on pattern completion tasks using Unicode symbols with documented low frequency in training corpora. The goal is to measure whether models can abstract transformation rules from varying numbers of training examples.
 
-If models can solve these tasks, they're doing something that looks like abstract reasoning. If they fail at chance levels, they're pattern matching.
+**Core question**: Does performance depend primarily on the number of training examples, or can models maintain accuracy with minimal examples?
 
-## 🎯 Three Experiments
+---
 
-### Experiment 1: Sequential Transformation Rule Induction
-**Question**: Can models learn "rotate left by 1" from examples with novel symbols?
+## Experiment Design
 
+### Task: Sequential Transformation Rule Induction
+
+Models receive training examples demonstrating a rotate-left transformation on 3-symbol sequences, then complete test sequences using entirely different symbols.
+
+**Example**:
 ```
-Training (20 examples):
-⧈ ⧉ ⨀ → ⨀ ⧈ ⧉
-⨁ ⨂ ⨃ → ⨃ ⨁ ⨂
-...
+Training:
+⨀ ⨁ ⨂ → ⨂ ⨀ ⨁
+⨃ ⨄ ⨅ → ⨅ ⨃ ⨄
 
-Test (20 examples with DIFFERENT symbols):
-⊛ ⊜ ⊝ → ?
-```
-
-**Predictions**:
-- Pattern matching: ~33% accuracy (chance)
-- Abstract reasoning: >80% accuracy
-
-### Experiment 2: Compositional Operator Application
-**Question**: Can models compose learned operations?
-
-```
-Learn operators:
-⊗ ◊ → ◊̄  (negation)
-⊕ ◊ → ◊◊  (duplication)
-
-Test composition:
-⊗ ⊕ ◊ → ?  (should be: ◊̄◊̄)
+Test (different symbols):
+⬯ ⨇ ⨈ → ?
 ```
 
-**Predictions**:
-- Pattern matching: Degrades exponentially with composition depth
-- Compositional reasoning: Maintains performance
+### Conditions Tested
 
-### Experiment 3: Relational Constraint Satisfaction
-**Question**: Can models induce implicit constraints?
+1. **Version 1**: 20 training examples, 20 test items
+2. **Version 1b**: 3 training examples, 20 test items  
+3. **Condition 1c**: 6 training examples (2 different rules), 20 test items
+4. **Condition 1d**: 3 training examples, 20 test items with varied sequence lengths (3-5 symbols)
+5. **Condition 1e**: 3 training examples, 20 test items split between control (same rule) and transfer (analogous rule)
 
-```
-Valid examples:
-▲ ■ ◆
-□ ◇ ●
-■ ◆ ▲
+### Materials
 
-Invalid (marked ✗):
-● ▲ ■  ✗
-◆ ■ □  ✗
+- **Symbol pools**: Unicode ranges U+2A00-U+2AFF, U+2B00-U+2BFF (mathematical operators, miscellaneous symbols)
+- **Symbol selection**: Based on Salesky et al. (2023) - documented <100 co-occurrences in Common Crawl
+- **Design**: Completely disjoint training and test symbol sets (zero overlap)
 
-Test: Classify new sequences + generate valid ones
-```
+---
 
-**Predictions**:
-- Pattern matching: ~50% classification (chance)
-- Abstract reasoning: >90% classification, constraint-satisfying generation
+## Results Summary
 
-## 🔬 Why This Matters
+| Condition | Training | GPT-4 | Claude 3.5 | Chance | Significant? |
+|-----------|----------|-------|------------|--------|--------------|
+| V1 | 20 | 100% | 100% | 16.7% | Yes |
+| V1b | 3 | 30% | 10% | 16.7% | No |
+| 1c | 6 | 65% | 45% | 50.0% | No |
+| 1d | 3 | 45% | 10% | varies | Poor |
+| 1e | varies | varies | varies | 16.7% | Mixed |
 
-### Theoretical Contribution
-- **Distinguishes mechanism from behavior**: Success/failure reveals underlying process
-- **No semantic scaffolding**: Tests reasoning "in vacuum" without linguistic crutches
-- **Distributional independence**: Symbols chosen to have <100 co-occurrences in Common Crawl
+**Key finding**: Performance collapsed from 100% (20 examples) to chance level (3 examples) for both models across multiple conditions.
 
-### Practical Implications
-- **Identifies capacity limits**: Where does abstraction break down?
-- **Guides architecture development**: What reasoning operations are substrate-independent?
-- **Benchmark for AGI**: Tests core reasoning without task-specific training
+---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 reasoning-in-vacuum/
-├── README.md                          # You are here
-├── theory.md                          # Full theoretical framework & predictions
-├── requirements.txt                   # Python dependencies
-├── .env.example                       # API key template
-├── .gitignore                         # Git ignore rules
+├── README.md                      # Project overview
+├── status.md                      # Detailed results
+├── PAPER_DRAFT.md                # Full analysis writeup
+├── requirements.txt              # Dependencies
+├── .env.example                  # API key template
 │
 ├── src/
-│   ├── __init__.py
-│   ├── config.py                      # Configuration & symbol pools
-│   ├── symbol_generator.py            # Generate novel symbol sets
+│   ├── config.py                 # Configuration
+│   ├── symbol_generator.py       # Symbol pool generation
 │   ├── experiments/
-│   │   ├── __init__.py
-│   │   ├── experiment_1_sequential.py # Sequential transformation
-│   │   ├── experiment_2_composition.py # Operator composition
-│   │   └── experiment_3_constraints.py # Constraint satisfaction
-│   ├── models/
-│   │   ├── __init__.py
-│   │   ├── base_model.py              # Base model interface
-│   │   ├── gpt4_model.py              # GPT-4 wrapper
-│   │   ├── claude_model.py            # Claude wrapper
-│   │   └── gemini_model.py            # Gemini wrapper
-│   └── analysis/
-│       ├── __init__.py
-│       ├── statistical_tests.py       # Hypothesis testing
-│       ├── visualization.py           # Plot results
-│       └── error_analysis.py          # Error pattern analysis
+│   │   ├── experiment_1_sequential.py      # V1 (20 examples)
+│   │   ├── experiment_1b_minimal.py        # V1b (3 examples)
+│   │   ├── experiment_1c_ambiguity.py      # 1c (2 rules)
+│   │   ├── experiment_1d_scaling.py        # 1d (varied length)
+│   │   └── experiment_1e_transfer.py       # 1e (analogical transfer)
+│   └── models/
+│       ├── gpt4_model.py         # GPT-4 integration
+│       └── claude_model.py       # Claude integration
 │
 ├── data/
-│   ├── symbols/
-│   │   ├── mathematical_operators.json # U+2A00-U+2AFF
-│   │   └── misc_symbols.json          # U+2B00-U+2BFF
-│   ├── experiments/
-│   │   ├── exp1_training.json         # Generated training sets
-│   │   ├── exp1_test.json             # Generated test sets
-│   │   └── ...
-│   └── results/
-│       ├── raw/                       # Raw model responses
-│       ├── processed/                 # Scored & analyzed
-│       └── human_baseline/            # Human performance data
+│   ├── experiments/              # Generated test sets
+│   ├── results/raw/              # Model responses
+│   └── symbols/                  # Symbol pools
 │
-├── notebooks/
-│   ├── 01_symbol_verification.ipynb   # Verify symbol novelty
-│   ├── 02_run_experiments.ipynb       # Execute all tests
-│   └── 03_analysis.ipynb              # Statistical analysis & viz
-│
-├── scripts/
-│   ├── verify_symbols.py              # Check co-occurrence stats
-│   ├── run_all_experiments.py         # Master experiment runner
-│   └── generate_report.py             # Create results report
-│
-└── outputs/
-    ├── figures/                       # Generated plots
-    ├── tables/                        # Results tables  
-    └── report.pdf                     # Final analysis report
+└── scripts/
+    ├── analyze_results.py        # Statistical analysis
+    └── verify_symbols.py         # Symbol novelty verification
 ```
 
-## 🚀 Quick Start
+---
+
+## Setup
 
 ### Prerequisites
 - Python 3.12+
-- API keys for: OpenAI (GPT-4), Anthropic (Claude), Google (Gemini)
-- ~$20-40 in API credits total
+- API keys: OpenAI (GPT-4), Anthropic (Claude)
 
 ### Installation
 
 ```bash
-# Clone repo
 git clone https://github.com/HillaryDanan/reasoning-in-vacuum.git
 cd reasoning-in-vacuum
 
-# Create virtual environment
 python3 -m venv venv
-source venv/bin/activate  # On Mac/Linux
+source venv/bin/activate
 
-# Install dependencies
 pip install -r requirements.txt
 
-# Set up environment variables
 cp .env.example .env
-# Edit .env and add your API keys
-
-# Verify setup
-python3 scripts/verify_symbols.py
+# Add API keys to .env
 ```
 
 ### Running Experiments
 
 ```bash
-# Run all three experiments on all models
-python3 scripts/run_all_experiments.py
-
-# Run specific experiment
-python3 -m src.experiments.experiment_1_sequential --model gpt4
+# Run specific condition
+python3 -m src.experiments.experiment_1_sequential
+python3 -m src.experiments.experiment_1b_minimal
 
 # Analyze results
-python3 scripts/generate_report.py
+python3 scripts/analyze_results.py
 ```
 
-### Jupyter Notebooks
+---
 
-```bash
-jupyter notebook notebooks/02_run_experiments.ipynb
-```
+## Methodology
 
-## 📊 Expected Results Timeline
+### Statistical Analysis
+- **Chance baseline**: 1/6 = 16.7% (random permutation of 3 symbols)
+- **Test**: Binomial test comparing observed accuracy to chance
+- **Alpha level**: 0.05 (two-tailed)
 
-- **Symbol generation & verification**: 1 hour
-- **Experiment execution**: 2-3 hours (API rate limits)
-- **Statistical analysis**: 1 hour
-- **Total**: ~5 hours hands-on time
+### Design Choices
+- **No verbal instructions**: Models receive only input-output examples
+- **Temperature**: 0.0 (deterministic sampling)
+- **Disjoint symbol sets**: Training and test use completely different symbols
+- **Symbol novelty**: Unicode ranges with <100 co-occurrences in training corpora
 
-## 🤝 Contributing
+---
 
-This is a scientific research project. Contributions welcome:
+## Limitations
 
-1. **Improve experimental design**: Suggest controls, additional conditions
-2. **Add models**: Extend to other LLMs (Llama, Mistral, etc.)
-3. **Statistical analysis**: Additional tests, visualizations
-4. **Replication**: Run experiments and share results
+1. **Symbol novelty verification**: Cannot definitively verify absence from proprietary training corpora
+2. **Sample size**: n=20 test items per condition
+3. **Model coverage**: Tested GPT-4 and Claude 3.5 only
+4. **Task specificity**: Results concern sequential transformation only
+5. **No human baseline**: Human performance not measured
 
-## 📄 License
+---
 
-MIT License - See LICENSE file for details
+## Data Availability
 
-## 📚 Citation
+All experimental data, code, and materials are in this repository:
+- Raw model responses: `data/results/raw/`
+- Generated test sets: `data/experiments/`
+- Symbol pools: `data/symbols/`
 
-If you use this framework in your research, please cite:
+---
+
+## Citation
 
 ```bibtex
 @misc{reasoning_in_vacuum_2025,
-  title={Reasoning in Vacuum: Probing LLM Abstraction Through Symbol Manipulation},
+  title={Reasoning in Vacuum: Testing LLM Abstraction with Minimal Examples},
   author={Danan, Hillary},
   year={2025},
   url={https://github.com/HillaryDanan/reasoning-in-vacuum}
 }
 ```
 
-## 🙏 Acknowledgments
+---
 
-Inspired by:
-- François Chollet's ARC dataset (measuring intelligence through abstraction)
-- Melanie Mitchell's work on AI reasoning capabilities
-- The mechanistic interpretability community
+## References
 
-## 📧 Contact
-
-Questions? Open an issue or reach out!
+- Salesky et al. (2023). Evaluating multilingual competence of large language models. EMNLP.
+- Chollet (2019). On the measure of intelligence. arXiv:1911.01547
+- Webb et al. (2023). Emergent analogical reasoning in large language models. Nature Human Behaviour.
 
 ---
 
-**Status**: 🔬 Active research project | Last updated: October 2025
+## License
+
+MIT License - See LICENSE file for details
+
+---
+
+*Last updated: October 2025*  
+*Status: Experiments complete*
